@@ -14,9 +14,9 @@ const router = express.Router();
 
 router.get('/',protect, getBooks);
 router.get('/search',protect, searchBooks);
-router.get('/:id', getBookById);
+router.get('/:id',protect, getBookById);
 router.post('/', protect,addBook);
-router.put('/:id', updateBook);
-router.delete('/:id', deleteBook);
+router.put('/:id', protect ,updateBook);
+router.delete('/:id', protect ,deleteBook);
 
 module.exports = router;

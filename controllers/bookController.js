@@ -34,6 +34,7 @@ exports.updateBook = async (req, res) => {
   const index = books.findIndex(b => b.id === req.params.id);
   if (index === -1) return res.status(404).json({ message: 'Book not found' });
 
+  // console.log(req.user , "user")
   if (books[index].userId !== req.user.id)
     return res.status(403).json({ message: 'Not authorized' });
 
